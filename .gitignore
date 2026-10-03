@@ -1,14 +1,13 @@
+# ==========================================
 # Dependencies
+# ==========================================
 node_modules/
 .pnp
 .pnp.js
 
-# Production & Build Artifacts
-dist/
-build/
-coverage/
-
-# Environment files (NEVER commit secrets to GitHub)
+# ==========================================
+# Environment & Secrets (NEVER push to GitHub)
+# ==========================================
 .env
 .env.local
 .env.development.local
@@ -16,11 +15,39 @@ coverage/
 .env.production.local
 .env*
 !.env.example
+*.pem
+*.key
+*.cert
 
+# ==========================================
+# Production & Build Outputs
+# ==========================================
+dist/
+build/
+out/
+.vite/
+.turbo/
+.cache/
+*.tsbuildinfo
+
+# ==========================================
 # Vercel & Deployments
+# ==========================================
 .vercel/
+.cloudflared/
 
+# ==========================================
+# Testing & Code Coverage
+# ==========================================
+coverage/
+.nyc_output/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ==========================================
 # Python & Virtual Environments
+# ==========================================
 __pycache__/
 *.py[cod]
 *$py.class
@@ -28,13 +55,40 @@ __pycache__/
 .Python
 env/
 venv/
+.venv/
 ENV/
+*.egg-info/
+dist-info/
 
-# System and logs
-.DS_Store
+# ==========================================
+# Logs & Diagnostic Files
+# ==========================================
 *.log
+logs/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-.cloudflared/
+pnpm-debug.log*
+lerna-debug.log*
 .system_generated/
+
+# ==========================================
+# IDE & Operating System Files
+# ==========================================
+.vscode/
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
