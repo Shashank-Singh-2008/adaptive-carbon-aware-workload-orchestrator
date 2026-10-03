@@ -67,7 +67,7 @@ EXPOSE 3001
 
 # Healthcheck
 HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
-  CMD curl -f http://localhost:3001/api/health || exit 1
+  CMD curl -f http://localhost:${PORT:-3001}/api/health || exit 1
 
 # Start the full-stack server
 CMD ["npm", "start"]
