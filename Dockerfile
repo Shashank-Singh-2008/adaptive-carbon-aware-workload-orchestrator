@@ -19,7 +19,6 @@ RUN npm ci
 # Copy source code and config
 COPY tsconfig.json vite.config.ts index.html ./
 COPY src/ ./src/
-COPY public/ ./public/ 2>/dev/null || true
 
 # Build production bundle
 RUN npm run build
