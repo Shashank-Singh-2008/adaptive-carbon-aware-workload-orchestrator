@@ -1,0 +1,6 @@
+{
+  "name": "Adaptive Carbon-Aware Workload Orchestrator",
+  "description": "Adaptive workload orchestration platform that optimizes ML and compute tasks across RUN, DELAY, and FRAGMENT strategies for minimum carbon emissions and cost.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
