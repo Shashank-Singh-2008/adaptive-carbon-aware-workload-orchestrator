@@ -14,7 +14,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install all dependencies (including devDependencies needed for Vite build)
-RUN npm ci
+RUN npm ci --legacy-peer-deps || npm install --legacy-peer-deps
 
 # Copy source code and config
 COPY tsconfig.json vite.config.ts index.html ./
@@ -45,7 +45,7 @@ RUN pip3 install --no-cache-dir --break-system-packages -r requirements.txt 2>/d
 
 # Copy package manifests & install production dependencies
 COPY package*.json ./
-RUN npm ci
+RUN npm ci --legacy-peer-deps || npm install --legacy-peer-deps
 
 # Copy built frontend assets from builder stage
 COPY --from=builder /app/dist ./dist
